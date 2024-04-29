@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1kqdyum8t1we"]
+
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_0yjxx"]
+[ext_resource type="PackedScene" uid="uid://7ud0a7csp370" path="res://Scenes/background.tscn" id="1_ldb3o"]
+[ext_resource type="PackedScene" uid="uid://c0qjtjdnq340" path="res://Scenes/bird.tscn" id="2_7wirg"]
+[ext_resource type="PackedScene" uid="uid://bx7bciyp31mem" path="res://Scenes/ground.tscn" id="3_1bsvn"]
+[ext_resource type="PackedScene" uid="uid://cxw213ghlhm1a" path="res://Scenes/pipe.tscn" id="5_mx38t"]
+[ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="7_355qy"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0yjxx")
+
+[node name="Background" parent="." instance=ExtResource("1_ldb3o")]
+z_index = -1
+position = Vector2(288, 288)
+scale = Vector2(2, 2)
+
+[node name="Bird" parent="." instance=ExtResource("2_7wirg")]
+z_index = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="Ground" parent="." instance=ExtResource("3_1bsvn")]
+z_index = 1
+texture_filter = 1
+position = Vector2(336, 743)
+scale = Vector2(2, 1)
+
+[node name="Pipe" parent="." instance=ExtResource("5_mx38t")]
+position = Vector2(491, 360)
+scale = Vector2(1.5, 1.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("7_355qy")

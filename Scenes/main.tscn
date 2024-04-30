@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1kqdyum8t1we"]
+[gd_scene load_steps=8 format=3 uid="uid://b1kqdyum8t1we"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_0yjxx"]
 [ext_resource type="PackedScene" uid="uid://7ud0a7csp370" path="res://Scenes/background.tscn" id="1_ldb3o"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bx7bciyp31mem" path="res://Scenes/ground.tscn" id="3_1bsvn"]
 [ext_resource type="PackedScene" uid="uid://cxw213ghlhm1a" path="res://Scenes/pipe.tscn" id="5_mx38t"]
 [ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="7_355qy"]
+[ext_resource type="PackedScene" uid="uid://droabjy6eb5hf" path="res://Scenes/hud.tscn" id="7_uj47m"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0yjxx")
@@ -37,4 +38,7 @@ script = ExtResource("7_355qy")
 [node name="PipeGenTimer" type="Timer" parent="."]
 wait_time = 1.5
 
+[node name="HUD" parent="." instance=ExtResource("7_uj47m")]
+
+[connection signal="collided" from="Bird" to="." method="_on_bird_collided"]
 [connection signal="timeout" from="PipeGenTimer" to="." method="_on_pipe_gen_timer_timeout"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxw213ghlhm1a"]
+[gd_scene load_steps=8 format=3 uid="uid://cxw213ghlhm1a"]
 
 [ext_resource type="Texture2D" uid="uid://bs4rwv75omvpq" path="res://sprites/pipe-green.png" id="1_6sm0x"]
+[ext_resource type="Script" path="res://Scenes/pipe.gd" id="1_tvxb4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imgd4"]
 size = Vector2(52, 24)
@@ -15,35 +16,36 @@ size = Vector2(52, 24)
 size = Vector2(48, 295)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3ybd"]
-size = Vector2(20, 80)
+size = Vector2(20, 110)
 
 [node name="Pipe" type="StaticBody2D"]
+script = ExtResource("1_tvxb4")
 
 [node name="top_pipe" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -200)
+position = Vector2(0, -215)
 rotation = 3.14159
 texture = ExtResource("1_6sm0x")
 
 [node name="top_pipe_head" type="CollisionShape2D" parent="."]
-position = Vector2(0, -52)
+position = Vector2(0, -67)
 shape = SubResource("RectangleShape2D_imgd4")
 
 [node name="top_pipe_body" type="CollisionShape2D" parent="."]
-position = Vector2(0, -211.5)
+position = Vector2(0, -226.5)
 shape = SubResource("RectangleShape2D_fyv2f")
 
 [node name="btm_pipe" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 200)
+position = Vector2(0, 215)
 texture = ExtResource("1_6sm0x")
 
 [node name="btm_pipe_head" type="CollisionShape2D" parent="."]
-position = Vector2(0, 52)
+position = Vector2(0, 67)
 shape = SubResource("RectangleShape2D_c21ce")
 
 [node name="btm_pipe_body" type="CollisionShape2D" parent="."]
-position = Vector2(0, 212.5)
+position = Vector2(0, 227.5)
 shape = SubResource("RectangleShape2D_fxlva")
 
 [node name="Area2D" type="Area2D" parent="."]

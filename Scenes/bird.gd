@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const FLAP_SPEED = -400.0
 const GRAVITY = 980
-var game_over : bool = true
+var game_over : bool = false
 
 func _physics_process(delta):
 	

@@ -1,4 +1,4 @@
 
 # Week 2 Flappy Bird
 
-This is a recreation of the pong game made solely for learning purpose.
+This is a recreation of the flappy bird game made solely for learning purpose.

@@ -17,9 +17,12 @@ func _ready():
 	
 	bird.respawn()
 	
+	# Generate the first pipe then continue generating using timer
 	generate_pipe()
 	$PipeGenTimer.start()
-
+	
+	# Reset score to 0
+	hud.update_score_label(score)
 
 func _process(delta):
 	if !game_over:
@@ -27,7 +30,7 @@ func _process(delta):
 
 func raise_score():
 	score += 1
-	hud.set_label_score(str(score))
+	hud.update_score_label(score)
 
 func generate_pipe():
 	pipe = pipe_scene.instantiate()

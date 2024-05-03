@@ -30,6 +30,7 @@ func _process(delta):
 
 func raise_score():
 	score += 1
+	bird.play_point_audio()
 	hud.update_score_label(score)
 
 func generate_pipe():

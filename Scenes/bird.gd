@@ -34,3 +34,6 @@ func _physics_process(delta):
 func respawn():
 	dead = false
 	position = Vector2(126,360)
+
+func play_point_audio():
+	$PointAudio.play()

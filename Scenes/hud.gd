@@ -11,3 +11,9 @@ extends CanvasLayer
 
 func update_score_label(num):
 	$Score_label.display_digits(num)
+
+func display_insruction(display: bool = true):
+	$Instruction_container.visible = display
+
+func display_game_over(display: bool = true):
+	$Game_over_rect.visible = display
